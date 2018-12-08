@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+ <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<script>
+
+audio = new Audio('flashlight.mp3');
+
+
+function changeImage() {
+
+//its checking C:\Users\ws21\Desktop\imgs\right.gif=="imgs\left.gif"
+        if  (document.getElementById("flashlight").src.indexOf('on.png') > -1)
+        {
+            document.getElementById("flashlight").src = "images/off.png";
+        }
+        else 
+        {
+            document.getElementById("flashlight").src = "images/on.png";
+        }
+
+audio.play();
+
+    }
+
+
+window.onload = function(){
+
+document.getElementById("flashlight").addEventListener("click", changeImage);
+
+
+
+}
+
+</script>
+</head>
+<style>
+#flashlight {
+  cursor:pointer;
+}
+</style>
+<body>
+<img id="flashlight" src="images/on.png">
+
+</body>
+</html>
+
